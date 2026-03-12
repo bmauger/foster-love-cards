@@ -3,6 +3,7 @@
 html,
 body {
     height: 100%;
+    margin: 0;
 }
 
 body {
@@ -10,202 +11,225 @@ body {
 }
 
 .rotating-image-widget {
-    display: flex;
-    flex-direction: column;
-    padding: 3.5rem 1rem 7.5rem 1rem;
+    position: relative;
+    padding: 3.5rem 1rem 3.5rem;
     font-family: Urbanist, Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    display: grid;
+    align-items: start;
+    color: #fff;
+}
+
+.rotating-image-widget.fl-bg-gray {
+    color: #000;
+    background-color: #f4f4f4;
+
+    .fl-button {
+        background-color: #0070d1;
+        color: #fff;
+    }
+}
+
+.rotating-image-widget.fl-bg-gray .fl-body-bg {
+    display: none;
+}
+
+.fl-body-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.rotating-image-widget-items {
+    width: 100%;
     max-width: 1024px;
     margin: 0 auto;
-    height: 100%;
-    max-height: 400px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
 
-    .fl-body-bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        z-index: -1;
+.copy-and-button {
+    display: grid;
+    gap: 0;
+}
+
+.copy-and-button h4 {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 40px;
+    text-wrap: pretty;
+    margin: 0 0 1rem;
+}
+
+.copy-and-button p {
+    margin: 0 0 1rem;
+}
+
+.copy-and-button p span {
+    text-decoration: underline;
+}
+
+.copy-and-button .sub-fl-subheader {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 32px;
+}
+
+.copy-and-button .fl-button {
+    border-radius: 50rem;
+    border: none;
+    display: grid;
+    place-items: center;
+    height: 56px;
+    background-color: #fff;
+    color: #0070d1;
+    width: 100%;
+    font-weight: 600;
+    padding: 0 1.5rem;
+}
+
+.card-stack-container {
+    display: grid;
+    justify-items: center;
+    align-content: start;
+    align-self: end;
+}
+
+.card-stack-container > p {
+    margin: 0;
+    text-align: center;
+}
+
+.card-stack {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 400 / 256;
+    margin: 3rem auto 0;
+}
+
+.card-stack a {
+    position: absolute;
+    inset: 0;
+    display: block;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    border-radius: 22px;
+    will-change: opacity, transform, filter;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+    animation: deckCycle 7.5s infinite cubic-bezier(.4, 0, .2, 1);
+    animation-fill-mode: both;
+}
+
+.c1 {
+    animation-delay: 0s;
+}
+
+.c2 {
+    animation-delay: -5s;
+}
+
+.c3 {
+    animation-delay: -2.5s;
+}
+
+@keyframes deckCycle {
+    0% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+        filter: blur(0);
+        z-index: 3;
     }
 
-    @media (min-width: 768px) {
-        flex-direction: row;
-        gap: 48px;
-        padding: 3.5rem 0;
+    23% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+        filter: blur(0);
+        z-index: 3;
+    }
 
-        .fl-body-bg {
-            height: 400px;
-        }
+    33.333% {
+        opacity: 0;
+        transform: translate3d(0, 0, 0) scale(1);
+        filter: blur(0);
+        z-index: 3;
+    }
+
+    33.334% {
+        opacity: 0;
+        transform: translate3d(0, -40px, 0) scale(.97);
+        filter: blur(4px);
+        z-index: 1;
+    }
+
+    40% {
+        opacity: 1;
+        transform: translate3d(0, -40px, 0) scale(.97);
+        filter: blur(4px);
+        z-index: 1;
+    }
+
+    60% {
+        opacity: 1;
+        transform: translate3d(0, -40px, 0) scale(.97);
+        filter: blur(4px);
+        z-index: 1;
+    }
+
+    66.666% {
+        opacity: 1;
+        transform: translate3d(0, -20px, 0) scale(.985);
+        filter: blur(2px);
+        z-index: 2;
+    }
+
+    93.333% {
+        opacity: 1;
+        transform: translate3d(0, -20px, 0) scale(.985);
+        filter: blur(2px);
+        z-index: 2;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+        filter: blur(0);
+        z-index: 3;
+    }
+}
+
+@media (min-width: 768px) {
+    .rotating-image-widget {
+        padding: 3.5rem 1rem;
+    }
+
+    .fl-body-bg {
+        height: 100%;
+    }
+
+    .copy-and-button .fl-button-white {
+        width: fit-content;
+        padding: 16px 56px;
+    }
+
+    .rotating-image-widget-items {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        column-gap: 48px;
+        align-items: stretch;
     }
 
     .copy-and-button {
-        margin-bottom: 2rem;
-        flex: 1;
-
-        @media (min-width: 768px) {
-            margin-bottom: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        h4 {
-            font-size: 2rem;
-            font-weight: 800;
-            line-height: 40px;
-            text-wrap: pretty;
-        }
-
-        p {
-            margin-bottom: 1rem;
-
-            span {
-                text-decoration: underline;
-            }
-
-            &.sub-fl-subheader {
-                font-size: 1.5rem;
-                margin-bottom: 1rem;
-                font-weight: 500;
-                line-height: 32px;
-            }
-        }
-
-        button {
-            &.fl-button-white {
-                border-radius: 50rem;
-                border: none;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 56px;
-                background-color: #fff;
-                color: #0070d1;
-                width: 100%;
-                font-weight: 600;
-            }
-        }
+        height: 100%;
+        align-content: space-between;
     }
-
-    .card-stack-container {
-        flex: 1;
-        display: flex;
-        align-items: self-end;
-
-        .card-stack {
-            position: relative;
-            width: 100%;
-            max-width: 400px;
-            height: 256px;
-            margin: 0 auto;
-
-            p {
-                margin: 0 0 4rem 0;
-                text-align: center;
-            }
-
-            .card {
-                position: absolute;
-                inset: 0;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                border-radius: 22px;
-                will-change: opacity, transform, filter;
-                backface-visibility: hidden;
-                transform: translate3d(0, 0, 0);
-                animation: deckCycle 7.5s infinite cubic-bezier(.4, 0, .2, 1);
-                animation-fill-mode: both;
-            }
-
-            .c1 {
-                animation-delay: 0s;
-            }
-
-            .c2 {
-                animation-delay: -5s;
-            }
-
-            .c3 {
-                animation-delay: -2.5s;
-            }
-        }
-    }
-
-    @keyframes deckCycle {
-        0% {
-            opacity: 1;
-            transform: translate3d(0, 0, 0) scale(1);
-            filter: blur(0);
-            z-index: 3;
-        }
-
-        23.0% {
-            opacity: 1;
-            transform: translate3d(0, 0, 0) scale(1);
-            filter: blur(0);
-            z-index: 3;
-        }
-
-        33.333% {
-            opacity: 0;
-            transform: translate3d(0, 0, 0) scale(1);
-            filter: blur(0);
-            z-index: 3;
-        }
-
-        33.334% {
-            opacity: 0;
-            transform: translate3d(0, -40px, 0) scale(.97);
-            filter: blur(4px);
-            z-index: 1;
-        }
-
-        40% {
-            opacity: 1;
-            transform: translate3d(0, -40px, 0) scale(.97);
-            filter: blur(4px);
-            z-index: 1;
-        }
-
-        60% {
-            opacity: 1;
-            transform: translate3d(0, -40px, 0) scale(.97);
-            filter: blur(4px);
-            z-index: 1;
-        }
-
-        66.666% {
-            opacity: 1;
-            transform: translate3d(0, -20px, 0) scale(.985);
-            filter: blur(2px);
-            z-index: 2;
-        }
-
-        93.333% {
-            opacity: 1;
-            transform: translate3d(0, -20px, 0) scale(.985);
-            filter: blur(2px);
-            z-index: 2;
-        }
-
-        100% {
-            opacity: 1;
-            transform: translate3d(0, 0, 0) scale(1);
-            filter: blur(0);
-            z-index: 3;
-        }
-    }
-
-    &.fl-bg-blue {
-        color: #fff;
-    }
-    &.fl-bg-gray {
-        color: #ccc;
-        background-color: #565656;
-        img {
-            display: none;
-        }
-    }
-
 }

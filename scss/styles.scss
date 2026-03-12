@@ -19,9 +19,8 @@ body {
     font-family: Urbanist, Arial, Helvetica, sans-serif;
     color: #fff;
 
-    // Background options
-    // Gray BG
-    &.fl-bg-gray {
+    // BACKGROUND OPTIONS
+    &.fl-bg-gray { // Gray BG
         color: #000;
         background-color: #f4f4f4;
 
@@ -36,8 +35,8 @@ body {
             display: none;
         }
     }
-    // White BG
-    &.fl-bg-white{
+    
+    &.fl-bg-white { // White BG
         color: #000;
         background-color: #fff;
 
@@ -52,8 +51,8 @@ body {
             display: none;
         }
     }
-    // Blue BG
-    &.fl-bg-blue {
+    
+    &.fl-bg-blue { // Blue BG
         color: #fff;
         background-color: #0070d1;
 

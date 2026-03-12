@@ -20,6 +20,7 @@ body {
     color: #fff;
 
     // Background options
+    // Gray BG
     &.fl-bg-gray {
         color: #000;
         background-color: #f4f4f4;
@@ -31,12 +32,11 @@ body {
                 background-color: #0063ad;
             }
         }
-
         .fl-body-bg {
             display: none;
         }
     }
-
+    // White BG
     &.fl-bg-white{
         color: #000;
         background-color: #fff;
@@ -48,12 +48,11 @@ body {
                 background-color: #0063ad;
             }
         }
-
         .fl-body-bg {
             display: none;
         }
     }
-
+    // Blue BG
     &.fl-bg-blue {
         color: #fff;
         background-color: #0070d1;
@@ -61,8 +60,10 @@ body {
         a.fl-button {
             background-color: #fff;
             color: #0070d1;
+            &:hover {
+                background-color: #e6f1f9;
+            }
         }
-
         .fl-body-bg {
             display: flex;
         }
@@ -95,7 +96,7 @@ body {
     h4 {
         margin: 0 0 1rem;
         font-size: 2rem;
-        font-weight: 800;
+        font-weight: 600;
         line-height: 40px;
         text-wrap: pretty;
     }
@@ -124,9 +125,6 @@ body {
         color: #0070d1;
         font-weight: 600;
         text-decoration: none;
-        &:hover {
-            background-color: #e6f1f9;
-        }
     }
 }
 
@@ -228,7 +226,7 @@ body {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
     .rotating-image-widget-items {
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
         column-gap: 48px;

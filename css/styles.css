@@ -54,6 +54,9 @@ body {
   background-color: #fff;
   color: #0070d1;
 }
+.rotating-image-widget.fl-bg-blue a.fl-button:hover {
+  background-color: #e6f1f9;
+}
 .rotating-image-widget.fl-bg-blue .fl-body-bg {
   display: flex;
 }
@@ -83,7 +86,7 @@ body {
 .copy-and-button h4 {
   margin: 0 0 1rem;
   font-size: 2rem;
-  font-weight: 800;
+  font-weight: 600;
   line-height: 40px;
   text-wrap: pretty;
 }
@@ -108,9 +111,6 @@ body {
   color: #0070d1;
   font-weight: 600;
   text-decoration: none;
-}
-.copy-and-button a.fl-button:hover {
-  background-color: #e6f1f9;
 }
 
 .card-stack-container {
@@ -200,7 +200,7 @@ body {
     z-index: 3;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .rotating-image-widget-items {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     column-gap: 48px;

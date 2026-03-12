@@ -11,83 +11,106 @@ body {
 
 .rotating-image-widget {
   position: relative;
-  padding: 3.5rem 1rem 3.5rem;
-  font-family: Urbanist, Arial, Helvetica, sans-serif;
-  margin: 0 auto;
   display: grid;
   align-items: start;
+  margin: 0 auto;
+  padding: 3.5rem 1rem;
+  font-family: Urbanist, Arial, Helvetica, sans-serif;
   color: #fff;
 }
-
 .rotating-image-widget.fl-bg-gray {
   color: #000;
   background-color: #f4f4f4;
 }
-.rotating-image-widget.fl-bg-gray .fl-button {
+.rotating-image-widget.fl-bg-gray a.fl-button {
   background-color: #0070d1;
   color: #fff;
 }
-
+.rotating-image-widget.fl-bg-gray a.fl-button:hover {
+  background-color: #0063ad;
+}
 .rotating-image-widget.fl-bg-gray .fl-body-bg {
   display: none;
+}
+.rotating-image-widget.fl-bg-white {
+  color: #000;
+  background-color: #fff;
+}
+.rotating-image-widget.fl-bg-white a.fl-button {
+  background-color: #0070d1;
+  color: #fff;
+}
+.rotating-image-widget.fl-bg-white a.fl-button:hover {
+  background-color: #0063ad;
+}
+.rotating-image-widget.fl-bg-white .fl-body-bg {
+  display: none;
+}
+.rotating-image-widget.fl-bg-blue {
+  color: #fff;
+  background-color: #0070d1;
+}
+.rotating-image-widget.fl-bg-blue a.fl-button {
+  background-color: #fff;
+  color: #0070d1;
+}
+.rotating-image-widget.fl-bg-blue .fl-body-bg {
+  display: flex;
 }
 
 .fl-body-bg {
   position: absolute;
   inset: 0;
+  z-index: -1;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
 }
 
 .rotating-image-widget-items {
-  width: 100%;
-  max-width: 1024px;
-  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
 }
 
 .copy-and-button {
   display: grid;
   gap: 0;
 }
-
 .copy-and-button h4 {
+  margin: 0 0 1rem;
   font-size: 2rem;
   font-weight: 800;
   line-height: 40px;
   text-wrap: pretty;
-  margin: 0 0 1rem;
 }
-
 .copy-and-button p {
   margin: 0 0 1rem;
 }
-
 .copy-and-button p span {
   text-decoration: underline;
 }
-
 .copy-and-button .sub-fl-subheader {
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 32px;
 }
-
-.copy-and-button .fl-button {
-  border-radius: 50rem;
-  border: none;
+.copy-and-button a.fl-button {
   display: grid;
   place-items: center;
   height: 56px;
+  border: none;
+  border-radius: 50rem;
   background-color: #fff;
   color: #0070d1;
-  width: 100%;
   font-weight: 600;
-  padding: 0 1.5rem;
+  text-decoration: none;
+}
+.copy-and-button a.fl-button:hover {
+  background-color: #e6f1f9;
 }
 
 .card-stack-container {
@@ -96,7 +119,6 @@ body {
   align-content: start;
   align-self: end;
 }
-
 .card-stack-container > p {
   margin: 0;
   text-align: center;
@@ -106,10 +128,9 @@ body {
   position: relative;
   width: 100%;
   max-width: 400px;
-  aspect-ratio: 400/256;
   margin: 3rem auto 0;
+  aspect-ratio: 400/256;
 }
-
 .card-stack a {
   position: absolute;
   inset: 0;
@@ -117,13 +138,13 @@ body {
 }
 
 .card {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
-  display: block;
   border-radius: 22px;
-  will-change: opacity, transform, filter;
   backface-visibility: hidden;
+  will-change: opacity, transform, filter;
   transform: translate3d(0, 0, 0);
   animation: deckCycle 7.5s infinite cubic-bezier(0.4, 0, 0.2, 1);
   animation-fill-mode: both;
@@ -142,13 +163,7 @@ body {
 }
 
 @keyframes deckCycle {
-  0% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1);
-    filter: blur(0);
-    z-index: 3;
-  }
-  23% {
+  0%, 23% {
     opacity: 1;
     transform: translate3d(0, 0, 0) scale(1);
     filter: blur(0);
@@ -166,25 +181,13 @@ body {
     filter: blur(4px);
     z-index: 1;
   }
-  40% {
+  40%, 60% {
     opacity: 1;
     transform: translate3d(0, -40px, 0) scale(0.97);
     filter: blur(4px);
     z-index: 1;
   }
-  60% {
-    opacity: 1;
-    transform: translate3d(0, -40px, 0) scale(0.97);
-    filter: blur(4px);
-    z-index: 1;
-  }
-  66.666% {
-    opacity: 1;
-    transform: translate3d(0, -20px, 0) scale(0.985);
-    filter: blur(2px);
-    z-index: 2;
-  }
-  93.333% {
+  66.666%, 93.333% {
     opacity: 1;
     transform: translate3d(0, -20px, 0) scale(0.985);
     filter: blur(2px);
@@ -198,16 +201,6 @@ body {
   }
 }
 @media (min-width: 768px) {
-  .rotating-image-widget {
-    padding: 3.5rem 1rem;
-  }
-  .fl-body-bg {
-    height: 100%;
-  }
-  .copy-and-button .fl-button-white {
-    width: fit-content;
-    padding: 16px 56px;
-  }
   .rotating-image-widget-items {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     column-gap: 48px;
@@ -216,6 +209,14 @@ body {
   .copy-and-button {
     height: 100%;
     align-content: space-between;
+  }
+  .copy-and-button .fl-button {
+    padding: 16px 56px;
+    width: fit-content;
+  }
+  .copy-and-button .fl-button-white {
+    width: fit-content;
+    padding: 16px 56px;
   }
 }
 

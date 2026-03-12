@@ -226,24 +226,27 @@ body {
 }
 
 @media (min-width: 992px) {
-    .rotating-image-widget-items {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-        column-gap: 48px;
-        align-items: stretch;
-    }
-
-    .copy-and-button {
-        height: 100%;
-        align-content: space-between;
-
-        .fl-button {
-            padding: 16px 56px;
-            width: fit-content;
+    .rotating-image-widget {
+        padding: 3.5rem 0;
+        .rotating-image-widget-items {
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            column-gap: 48px;
+            align-items: stretch;
         }
 
-        .fl-button-white {
-            width: fit-content;
-            padding: 16px 56px;
+        .copy-and-button {
+            height: 100%;
+            align-content: space-between;
+
+            .fl-button {
+                padding: 16px 56px;
+                width: fit-content;
+            }
+
+            .fl-button-white {
+                width: fit-content;
+                padding: 16px 56px;
+            }
         }
     }
 }

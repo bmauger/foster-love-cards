@@ -201,20 +201,23 @@ body {
   }
 }
 @media (min-width: 992px) {
-  .rotating-image-widget-items {
+  .rotating-image-widget {
+    padding: 3.5rem 0;
+  }
+  .rotating-image-widget .rotating-image-widget-items {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     column-gap: 48px;
     align-items: stretch;
   }
-  .copy-and-button {
+  .rotating-image-widget .copy-and-button {
     height: 100%;
     align-content: space-between;
   }
-  .copy-and-button .fl-button {
+  .rotating-image-widget .copy-and-button .fl-button {
     padding: 16px 56px;
     width: fit-content;
   }
-  .copy-and-button .fl-button-white {
+  .rotating-image-widget .copy-and-button .fl-button-white {
     width: fit-content;
     padding: 16px 56px;
   }

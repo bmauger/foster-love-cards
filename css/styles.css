@@ -32,10 +32,18 @@ body {
   background-color: #0063ad;
 }
 .rotating-image-widget.fl-bg-gray {
+  color: #525656;
   background-color: #f4f4f4;
 }
+.rotating-image-widget.fl-bg-gray h4.fl-header {
+  color: #000;
+}
 .rotating-image-widget.fl-bg-white {
+  color: #525656;
   background-color: #fff;
+}
+.rotating-image-widget.fl-bg-white h4.fl-header {
+  color: #000;
 }
 .rotating-image-widget.fl-bg-blue {
   color: #fff;
@@ -101,7 +109,7 @@ body {
   display: grid;
   justify-items: center;
   align-content: start;
-  align-self: end;
+  align-self: flex-start;
 }
 .rotating-image-widget .card-stack-container > p.fl-p {
   margin: 0;
@@ -128,17 +136,20 @@ body {
   backface-visibility: hidden;
   will-change: opacity, transform, filter;
   transform: translate3d(0, 0, 0);
-  animation: deckCycle 7.5s infinite cubic-bezier(0.4, 0, 0.2, 1);
+  animation-name: deckCycle;
+  animation-duration: calc(var(--card-seconds, 3) * 3s);
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   animation-fill-mode: both;
 }
 .rotating-image-widget .card-stack-container .card-stack .card.fl-c1 {
   animation-delay: 0s;
 }
 .rotating-image-widget .card-stack-container .card-stack .card.fl-c2 {
-  animation-delay: -5s;
+  animation-delay: calc(var(--card-seconds, 3) * -2s);
 }
 .rotating-image-widget .card-stack-container .card-stack .card.fl-c3 {
-  animation-delay: -2.5s;
+  animation-delay: calc(var(--card-seconds, 3) * -1s);
 }
 
 @keyframes deckCycle {
@@ -190,7 +201,7 @@ body {
   }
   .rotating-image-widget .copy-and-button {
     height: 100%;
-    align-content: space-between;
+    align-content: flex-start;
   }
   .rotating-image-widget .copy-and-button .fl-button,
   .rotating-image-widget .copy-and-button .fl-button-white {

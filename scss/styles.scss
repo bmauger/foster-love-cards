@@ -38,10 +38,18 @@ body {
     }
 
     &.fl-bg-gray {
+        h4.fl-header {
+            color: #000;
+        }
+        color: #525656;
         background-color: #f4f4f4;
     }
 
     &.fl-bg-white {
+        h4.fl-header {
+            color: #000;
+        }
+        color: #525656;
         background-color: #fff;
     }
 
@@ -121,7 +129,7 @@ body {
         display: grid;
         justify-items: center;
         align-content: start;
-        align-self: end;
+        align-self: flex-start;
 
         >p.fl-p {
             margin: 0;
@@ -150,7 +158,10 @@ body {
                 backface-visibility: hidden;
                 will-change: opacity, transform, filter;
                 transform: translate3d(0, 0, 0);
-                animation: deckCycle 7.5s infinite cubic-bezier(.4, 0, .2, 1);
+                animation-name: deckCycle;
+                animation-duration: calc(var(--card-seconds, 3) * 3s);
+                animation-iteration-count: infinite;
+                animation-timing-function: cubic-bezier(.4, 0, .2, 1);
                 animation-fill-mode: both;
 
                 &.fl-c1 {
@@ -158,11 +169,11 @@ body {
                 }
 
                 &.fl-c2 {
-                    animation-delay: -5s;
+                    animation-delay: calc(var(--card-seconds, 3) * -2s);
                 }
 
                 &.fl-c3 {
-                    animation-delay: -2.5s;
+                    animation-delay: calc(var(--card-seconds, 3) * -1s);
                 }
             }
         }
@@ -231,7 +242,7 @@ body {
 
         .copy-and-button {
             height: 100%;
-            align-content: space-between;
+            align-content: flex-start;
 
             .fl-button,
             .fl-button-white {

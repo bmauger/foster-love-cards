@@ -34,6 +34,22 @@
             </div>
         </div>
     </div>
+    <select id="cardTiming">
+        <option value="2">2 seconds</option>
+        <option value="3">3 seconds</option>
+        <option value="4">4 seconds</option>
+        <option value="5">5 seconds</option>
+    </select>
+
+    <script>
+        const select = document.getElementById('cardTiming')
+
+        document.documentElement.style.setProperty('--card-seconds', 3)
+
+        select.addEventListener('change', function () {
+            document.documentElement.style.setProperty('--card-seconds', this.value)
+        })
+    </script>
 </body>
 
 </html>

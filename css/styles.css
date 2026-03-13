@@ -18,49 +18,39 @@ body {
   font-family: Urbanist, Arial, Helvetica, sans-serif;
   color: #fff;
 }
-.rotating-image-widget.fl-bg-gray {
+.rotating-image-widget.fl-bg-gray, .rotating-image-widget.fl-bg-white {
   color: #000;
+}
+.rotating-image-widget.fl-bg-gray .fl-body-bg, .rotating-image-widget.fl-bg-white .fl-body-bg {
+  display: none;
+}
+.rotating-image-widget.fl-bg-gray .fl-button, .rotating-image-widget.fl-bg-white .fl-button {
+  background-color: #0070d1;
+  color: #fff;
+}
+.rotating-image-widget.fl-bg-gray .fl-button:hover, .rotating-image-widget.fl-bg-white .fl-button:hover {
+  background-color: #0063ad;
+}
+.rotating-image-widget.fl-bg-gray {
   background-color: #f4f4f4;
 }
-.rotating-image-widget.fl-bg-gray a.fl-button {
-  background-color: #0070d1;
-  color: #fff;
-}
-.rotating-image-widget.fl-bg-gray a.fl-button:hover {
-  background-color: #0063ad;
-}
-.rotating-image-widget.fl-bg-gray .fl-body-bg {
-  display: none;
-}
 .rotating-image-widget.fl-bg-white {
-  color: #000;
   background-color: #fff;
-}
-.rotating-image-widget.fl-bg-white a.fl-button {
-  background-color: #0070d1;
-  color: #fff;
-}
-.rotating-image-widget.fl-bg-white a.fl-button:hover {
-  background-color: #0063ad;
-}
-.rotating-image-widget.fl-bg-white .fl-body-bg {
-  display: none;
 }
 .rotating-image-widget.fl-bg-blue {
   color: #fff;
 }
-.rotating-image-widget.fl-bg-blue a.fl-button {
+.rotating-image-widget.fl-bg-blue .fl-button {
   background-color: #fff;
   color: #0070d1;
 }
-.rotating-image-widget.fl-bg-blue a.fl-button:hover {
+.rotating-image-widget.fl-bg-blue .fl-button:hover {
   background-color: #e6f1f9;
 }
 .rotating-image-widget.fl-bg-blue .fl-body-bg {
-  display: flex;
+  display: block;
 }
-
-.fl-body-bg {
+.rotating-image-widget .fl-body-bg {
   position: absolute;
   inset: 0;
   z-index: -1;
@@ -68,8 +58,7 @@ body {
   height: 100%;
   object-fit: cover;
 }
-
-.rotating-image-widget-items {
+.rotating-image-widget .rotating-image-widget-items {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
@@ -77,66 +66,60 @@ body {
   max-width: 1024px;
   margin: 0 auto;
 }
-
-.copy-and-button {
+.rotating-image-widget .copy-and-button {
   display: grid;
   gap: 0;
 }
-.copy-and-button h4 {
+.rotating-image-widget .copy-and-button h4 {
   margin: 0 0 1rem;
   font-size: 2rem;
   font-weight: 600;
   line-height: 40px;
   text-wrap: pretty;
 }
-.copy-and-button p {
+.rotating-image-widget .copy-and-button p {
   margin: 0 0 1rem;
 }
-.copy-and-button p span {
+.rotating-image-widget .copy-and-button p span {
   text-decoration: underline;
 }
-.copy-and-button .sub-fl-subheader {
+.rotating-image-widget .copy-and-button .sub-fl-subheader {
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 32px;
 }
-.copy-and-button a.fl-button {
+.rotating-image-widget .copy-and-button .fl-button {
   display: grid;
   place-items: center;
   height: 56px;
   border: none;
   border-radius: 50rem;
-  background-color: #fff;
-  color: #0070d1;
   font-weight: 600;
   text-decoration: none;
 }
-
-.card-stack-container {
+.rotating-image-widget .card-stack-container {
   display: grid;
   justify-items: center;
   align-content: start;
   align-self: end;
 }
-.card-stack-container > p {
+.rotating-image-widget .card-stack-container > p {
   margin: 0;
   text-align: center;
 }
-
-.card-stack {
+.rotating-image-widget .card-stack {
   position: relative;
   width: 100%;
   max-width: 400px;
-  margin: 3rem auto 0;
+  margin: 4rem auto 0;
   aspect-ratio: 400/256;
 }
-.card-stack a {
+.rotating-image-widget .card-stack a {
   position: absolute;
   inset: 0;
   display: block;
 }
-
-.card {
+.rotating-image-widget .card {
   display: block;
   width: 100%;
   height: 100%;
@@ -148,16 +131,13 @@ body {
   animation: deckCycle 7.5s infinite cubic-bezier(0.4, 0, 0.2, 1);
   animation-fill-mode: both;
 }
-
-.c1 {
+.rotating-image-widget .c1 {
   animation-delay: 0s;
 }
-
-.c2 {
+.rotating-image-widget .c2 {
   animation-delay: -5s;
 }
-
-.c3 {
+.rotating-image-widget .c3 {
   animation-delay: -2.5s;
 }
 
@@ -212,10 +192,7 @@ body {
     height: 100%;
     align-content: space-between;
   }
-  .rotating-image-widget .copy-and-button .fl-button {
-    padding: 16px 56px;
-    width: fit-content;
-  }
+  .rotating-image-widget .copy-and-button .fl-button,
   .rotating-image-widget .copy-and-button .fl-button-white {
     width: fit-content;
     padding: 16px 56px;

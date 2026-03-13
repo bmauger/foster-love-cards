@@ -19,162 +19,154 @@ body {
     font-family: Urbanist, Arial, Helvetica, sans-serif;
     color: #fff;
 
-    // BACKGROUND OPTIONS
-    &.fl-bg-gray { // Gray BG
+    &.fl-bg-gray,
+    &.fl-bg-white {
         color: #000;
+
+        .fl-body-bg {
+            display: none;
+        }
+
+        .fl-button {
+            background-color: #0070d1;
+            color: #fff;
+
+            &:hover {
+                background-color: #0063ad;
+            }
+        }
+    }
+
+    &.fl-bg-gray {
         background-color: #f4f4f4;
-
-        a.fl-button {
-            background-color: #0070d1;
-            color: #fff;
-            &:hover {
-                background-color: #0063ad;
-            }
-        }
-        .fl-body-bg {
-            display: none;
-        }
     }
-    
-    &.fl-bg-white { // White BG
-        color: #000;
+
+    &.fl-bg-white {
         background-color: #fff;
-
-        a.fl-button {
-            background-color: #0070d1;
-            color: #fff;
-            &:hover {
-                background-color: #0063ad;
-            }
-        }
-        .fl-body-bg {
-            display: none;
-        }
     }
-    
-    &.fl-bg-blue { // Blue BG
+
+    &.fl-bg-blue {
         color: #fff;
 
-        a.fl-button {
+        .fl-button {
             background-color: #fff;
             color: #0070d1;
+
             &:hover {
                 background-color: #e6f1f9;
             }
         }
+
         .fl-body-bg {
-            display: flex;
-        }
-    }
-    // End background options
-}
-
-.fl-body-bg {
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.rotating-image-widget-items {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    width: 100%;
-    max-width: 1024px;
-    margin: 0 auto;
-}
-
-.copy-and-button {
-    display: grid;
-    gap: 0;
-
-    h4 {
-        margin: 0 0 1rem;
-        font-size: 2rem;
-        font-weight: 600;
-        line-height: 40px;
-        text-wrap: pretty;
-    }
-
-    p {
-        margin: 0 0 1rem;
-
-        span {
-            text-decoration: underline;
+            display: block;
         }
     }
 
-    .sub-fl-subheader {
-        font-size: 1.5rem;
-        font-weight: 500;
-        line-height: 32px;
-    }
-
-    a.fl-button {
-        display: grid;
-        place-items: center;
-        height: 56px;
-        border: none;
-        border-radius: 50rem;
-        background-color: #fff;
-        color: #0070d1;
-        font-weight: 600;
-        text-decoration: none;
-    }
-}
-
-.card-stack-container {
-    display: grid;
-    justify-items: center;
-    align-content: start;
-    align-self: end;
-
-    > p {
-        margin: 0;
-        text-align: center;
-    }
-}
-
-.card-stack {
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-    margin: 3rem auto 0;
-    aspect-ratio: 400 / 256;
-
-    a {
+    .fl-body-bg {
         position: absolute;
         inset: 0;
-        display: block;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
-}
 
-.card {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    border-radius: 22px;
-    backface-visibility: hidden;
-    will-change: opacity, transform, filter;
-    transform: translate3d(0, 0, 0);
-    animation: deckCycle 7.5s infinite cubic-bezier(.4, 0, .2, 1);
-    animation-fill-mode: both;
-}
+    .rotating-image-widget-items {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        width: 100%;
+        max-width: 1024px;
+        margin: 0 auto;
+    }
 
-.c1 {
-    animation-delay: 0s;
-}
+    .copy-and-button {
+        display: grid;
+        gap: 0;
 
-.c2 {
-    animation-delay: -5s;
-}
+        h4 {
+            margin: 0 0 1rem;
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 40px;
+            text-wrap: pretty;
+        }
 
-.c3 {
-    animation-delay: -2.5s;
+        p {
+            margin: 0 0 1rem;
+
+            span {
+                text-decoration: underline;
+            }
+        }
+
+        .sub-fl-subheader {
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 32px;
+        }
+
+        .fl-button {
+            display: grid;
+            place-items: center;
+            height: 56px;
+            border: none;
+            border-radius: 50rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+    }
+
+    .card-stack-container {
+        display: grid;
+        justify-items: center;
+        align-content: start;
+        align-self: end;
+
+        > p {
+            margin: 0;
+            text-align: center;
+        }
+    }
+
+    .card-stack {
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+        margin: 4rem auto 0;
+        aspect-ratio: 400 / 256;
+
+        a {
+            position: absolute;
+            inset: 0;
+            display: block;
+        }
+    }
+
+    .card {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 22px;
+        backface-visibility: hidden;
+        will-change: opacity, transform, filter;
+        transform: translate3d(0, 0, 0);
+        animation: deckCycle 7.5s infinite cubic-bezier(.4, 0, .2, 1);
+        animation-fill-mode: both;
+    }
+
+    .c1 {
+        animation-delay: 0s;
+    }
+
+    .c2 {
+        animation-delay: -5s;
+    }
+
+    .c3 {
+        animation-delay: -2.5s;
+    }
 }
 
 @keyframes deckCycle {
@@ -227,6 +219,7 @@ body {
 @media (min-width: 992px) {
     .rotating-image-widget {
         padding: 3.5rem 0;
+
         .rotating-image-widget-items {
             grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
             column-gap: 48px;
@@ -237,11 +230,7 @@ body {
             height: 100%;
             align-content: space-between;
 
-            .fl-button {
-                padding: 16px 56px;
-                width: fit-content;
-            }
-
+            .fl-button,
             .fl-button-white {
                 width: fit-content;
                 padding: 16px 56px;

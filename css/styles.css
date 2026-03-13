@@ -66,29 +66,29 @@ body {
   max-width: 1024px;
   margin: 0 auto;
 }
-.rotating-image-widget .copy-and-button {
+.rotating-image-widget .rotating-image-widget-items .copy-and-button {
   display: grid;
   gap: 0;
 }
-.rotating-image-widget .copy-and-button h4 {
+.rotating-image-widget .rotating-image-widget-items .copy-and-button h4.fl-header {
   margin: 0 0 1rem;
   font-size: 2rem;
   font-weight: 600;
   line-height: 40px;
   text-wrap: pretty;
 }
-.rotating-image-widget .copy-and-button p {
+.rotating-image-widget .rotating-image-widget-items .copy-and-button p {
   margin: 0 0 1rem;
 }
-.rotating-image-widget .copy-and-button p span {
+.rotating-image-widget .rotating-image-widget-items .copy-and-button p span {
   text-decoration: underline;
 }
-.rotating-image-widget .copy-and-button .sub-fl-subheader {
+.rotating-image-widget .rotating-image-widget-items .copy-and-button .sub-fl-subheader {
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 32px;
 }
-.rotating-image-widget .copy-and-button .fl-button {
+.rotating-image-widget .rotating-image-widget-items .copy-and-button .fl-button {
   display: grid;
   place-items: center;
   height: 56px;
@@ -103,23 +103,23 @@ body {
   align-content: start;
   align-self: end;
 }
-.rotating-image-widget .card-stack-container > p {
+.rotating-image-widget .card-stack-container > p.fl-p {
   margin: 0;
   text-align: center;
 }
-.rotating-image-widget .card-stack {
+.rotating-image-widget .card-stack-container .card-stack {
   position: relative;
   width: 100%;
   max-width: 400px;
   margin: 4rem auto 0;
   aspect-ratio: 400/256;
 }
-.rotating-image-widget .card-stack a {
+.rotating-image-widget .card-stack-container .card-stack a {
   position: absolute;
   inset: 0;
   display: block;
 }
-.rotating-image-widget .card {
+.rotating-image-widget .card-stack-container .card-stack .card {
   display: block;
   width: 100%;
   height: 100%;
@@ -131,13 +131,13 @@ body {
   animation: deckCycle 7.5s infinite cubic-bezier(0.4, 0, 0.2, 1);
   animation-fill-mode: both;
 }
-.rotating-image-widget .c1 {
+.rotating-image-widget .card-stack-container .card-stack .card.fl-c1 {
   animation-delay: 0s;
 }
-.rotating-image-widget .c2 {
+.rotating-image-widget .card-stack-container .card-stack .card.fl-c2 {
   animation-delay: -5s;
 }
-.rotating-image-widget .c3 {
+.rotating-image-widget .card-stack-container .card-stack .card.fl-c3 {
   animation-delay: -2.5s;
 }
 

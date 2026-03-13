@@ -78,42 +78,42 @@ body {
         width: 100%;
         max-width: 1024px;
         margin: 0 auto;
-    }
 
-    .copy-and-button {
-        display: grid;
-        gap: 0;
-
-        h4 {
-            margin: 0 0 1rem;
-            font-size: 2rem;
-            font-weight: 600;
-            line-height: 40px;
-            text-wrap: pretty;
-        }
-
-        p {
-            margin: 0 0 1rem;
-
-            span {
-                text-decoration: underline;
-            }
-        }
-
-        .sub-fl-subheader {
-            font-size: 1.5rem;
-            font-weight: 500;
-            line-height: 32px;
-        }
-
-        .fl-button {
+        .copy-and-button {
             display: grid;
-            place-items: center;
-            height: 56px;
-            border: none;
-            border-radius: 50rem;
-            font-weight: 600;
-            text-decoration: none;
+            gap: 0;
+
+            h4.fl-header {
+                margin: 0 0 1rem;
+                font-size: 2rem;
+                font-weight: 600;
+                line-height: 40px;
+                text-wrap: pretty;
+            }
+
+            p {
+                margin: 0 0 1rem;
+
+                span {
+                    text-decoration: underline;
+                }
+            }
+
+            .sub-fl-subheader {
+                font-size: 1.5rem;
+                font-weight: 500;
+                line-height: 32px;
+            }
+
+            .fl-button {
+                display: grid;
+                place-items: center;
+                height: 56px;
+                border: none;
+                border-radius: 50rem;
+                font-weight: 600;
+                text-decoration: none;
+            }
         }
     }
 
@@ -123,53 +123,56 @@ body {
         align-content: start;
         align-self: end;
 
-        > p {
+        >p.fl-p {
             margin: 0;
             text-align: center;
         }
-    }
 
-    .card-stack {
-        position: relative;
-        width: 100%;
-        max-width: 400px;
-        margin: 4rem auto 0;
-        aspect-ratio: 400 / 256;
+        .card-stack {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin: 4rem auto 0;
+            aspect-ratio: 400 / 256;
 
-        a {
-            position: absolute;
-            inset: 0;
-            display: block;
+            a {
+                position: absolute;
+                inset: 0;
+                display: block;
+            }
+
+            .card {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                border-radius: 22px;
+                backface-visibility: hidden;
+                will-change: opacity, transform, filter;
+                transform: translate3d(0, 0, 0);
+                animation: deckCycle 7.5s infinite cubic-bezier(.4, 0, .2, 1);
+                animation-fill-mode: both;
+
+                &.fl-c1 {
+                    animation-delay: 0s;
+                }
+
+                &.fl-c2 {
+                    animation-delay: -5s;
+                }
+
+                &.fl-c3 {
+                    animation-delay: -2.5s;
+                }
+            }
         }
     }
 
-    .card {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        border-radius: 22px;
-        backface-visibility: hidden;
-        will-change: opacity, transform, filter;
-        transform: translate3d(0, 0, 0);
-        animation: deckCycle 7.5s infinite cubic-bezier(.4, 0, .2, 1);
-        animation-fill-mode: both;
-    }
 
-    .c1 {
-        animation-delay: 0s;
-    }
-
-    .c2 {
-        animation-delay: -5s;
-    }
-
-    .c3 {
-        animation-delay: -2.5s;
-    }
 }
 
 @keyframes deckCycle {
+
     0%,
     23% {
         opacity: 1;

@@ -206,9 +206,6 @@ body {
   }
 }
 @media (min-width: 992px) {
-  .rotating-image-widget {
-    padding: 3.5rem 0;
-  }
   .rotating-image-widget .rotating-image-widget-items {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     column-gap: 48px;

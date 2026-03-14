@@ -152,6 +152,7 @@ body {
   animation-iteration-count: infinite;
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   animation-fill-mode: both;
+  animation-play-state: running;
 }
 .rotating-image-widget .card-stack-container .card-stack .fl-card.fl-c1 {
   animation-delay: 0s;
@@ -161,6 +162,9 @@ body {
 }
 .rotating-image-widget .card-stack-container .card-stack .fl-card.fl-c3 {
   animation-delay: calc(var(--card-seconds, 3) * -1s);
+}
+.rotating-image-widget .card-stack-container .card-stack:hover .fl-card {
+  animation-play-state: paused;
 }
 
 @keyframes deckCycle {

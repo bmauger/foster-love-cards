@@ -45,8 +45,10 @@ body {
         h4.fl-header {
             color: #000;
         }
+
         color: #525656;
         background-color: #f4f4f4;
+
         .fl-card {
             border: 1px solid #ccc;
         }
@@ -56,8 +58,10 @@ body {
         h4.fl-header {
             color: #000;
         }
+
         color: #525656;
         background-color: #fff;
+
         .fl-card {
             border: 1px solid #ccc;
         }
@@ -174,6 +178,7 @@ body {
                 animation-iteration-count: infinite;
                 animation-timing-function: cubic-bezier(.4, 0, .2, 1);
                 animation-fill-mode: both;
+                animation-play-state: running;
 
                 &.fl-c1 {
                     animation-delay: 0s;
@@ -185,6 +190,12 @@ body {
 
                 &.fl-c3 {
                     animation-delay: calc(var(--card-seconds, 3) * -1s);
+                }
+            }
+
+            &:hover {
+                .fl-card {
+                    animation-play-state: paused;
                 }
             }
         }

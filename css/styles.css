@@ -87,6 +87,8 @@ body {
 .rotating-image-widget .rotating-image-widget-items .copy-and-button {
   display: grid;
   gap: 0;
+  max-width: 600px;
+  margin: 0 auto;
 }
 .rotating-image-widget .rotating-image-widget-items .copy-and-button h4.fl-header {
   margin: 0 0 1rem;
@@ -129,7 +131,7 @@ body {
   position: relative;
   width: 100%;
   max-width: 400px;
-  margin: 4rem auto 0;
+  margin: 3.5rem auto 0;
   aspect-ratio: 400/256;
 }
 .rotating-image-widget .card-stack-container .card-stack a {

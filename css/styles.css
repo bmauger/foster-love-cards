@@ -9,6 +9,10 @@ body {
   position: relative;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .rotating-image-widget {
   position: relative;
   display: grid;
@@ -38,12 +42,18 @@ body {
 .rotating-image-widget.fl-bg-gray h4.fl-header {
   color: #000;
 }
+.rotating-image-widget.fl-bg-gray .fl-card {
+  border: 1px solid #ccc;
+}
 .rotating-image-widget.fl-bg-white {
   color: #525656;
   background-color: #fff;
 }
 .rotating-image-widget.fl-bg-white h4.fl-header {
   color: #000;
+}
+.rotating-image-widget.fl-bg-white .fl-card {
+  border: 1px solid #ccc;
 }
 .rotating-image-widget.fl-bg-blue {
   color: #fff;
@@ -127,12 +137,13 @@ body {
   inset: 0;
   display: block;
 }
-.rotating-image-widget .card-stack-container .card-stack .card {
+.rotating-image-widget .card-stack-container .card-stack .fl-card {
+  position: relative;
   display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
-  border-radius: 22px;
+  border-radius: 24px;
   backface-visibility: hidden;
   will-change: opacity, transform, filter;
   transform: translate3d(0, 0, 0);
@@ -142,13 +153,13 @@ body {
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   animation-fill-mode: both;
 }
-.rotating-image-widget .card-stack-container .card-stack .card.fl-c1 {
+.rotating-image-widget .card-stack-container .card-stack .fl-card.fl-c1 {
   animation-delay: 0s;
 }
-.rotating-image-widget .card-stack-container .card-stack .card.fl-c2 {
+.rotating-image-widget .card-stack-container .card-stack .fl-card.fl-c2 {
   animation-delay: calc(var(--card-seconds, 3) * -2s);
 }
-.rotating-image-widget .card-stack-container .card-stack .card.fl-c3 {
+.rotating-image-widget .card-stack-container .card-stack .fl-card.fl-c3 {
   animation-delay: calc(var(--card-seconds, 3) * -1s);
 }
 

@@ -5,10 +5,6 @@ body {
   margin: 0;
 }
 
-body {
-  position: relative;
-}
-
 * {
   box-sizing: border-box;
 }

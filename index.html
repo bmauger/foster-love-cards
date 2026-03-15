@@ -35,13 +35,13 @@
             </div>
         </div>
     </div>
+    <!-- For use in the CMS -->
     <select id="cardTiming">
         <option value="2">2 seconds</option>
         <option value="3" selected>3 seconds</option>
         <option value="4">4 seconds</option>
         <option value="5">5 seconds</option>
     </select>
-
     <script>
         const select = document.getElementById('cardTiming')
 
@@ -51,6 +51,7 @@
             document.documentElement.style.setProperty('--card-seconds', this.value)
         })
     </script>
+    <!-- END -->
 </body>
 
 </html>

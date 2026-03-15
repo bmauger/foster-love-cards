@@ -118,10 +118,10 @@ body {
   text-decoration: none;
 }
 .rotating-image-widget .card-stack-container {
-  display: grid;
-  justify-items: center;
-  align-content: start;
+  display: flex;
+  flex-direction: column;
   align-self: flex-start;
+  justify-content: center;
 }
 .rotating-image-widget .card-stack-container > p.fl-p {
   margin: 0;

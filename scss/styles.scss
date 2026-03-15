@@ -142,10 +142,12 @@ body {
     }
 
     .card-stack-container {
-        display: grid;
-        justify-items: center;
-        align-content: start;
+        display: flex;
+        flex-direction: column;
+        // justify-items: center;
+        // align-content: start;
         align-self: flex-start;
+        justify-content: center;
 
         >p.fl-p {
             margin: 0;
